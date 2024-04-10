@@ -1,15 +1,50 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import analysis.GeneCounter;
+import analysis.GeneticCombinations;
+import information.DateManager;
+import information.DocumentOrganizer;
+import information.TextSearcher;
+import numeric.MaxFinder;
+import numeric.NumberListing;
+import numeric.NumberSummation;
+import numeric.PowerCalculator;
+import optimization.QuicksortOptimizer;
+
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("¡Hola y bienvenido!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        GeneCounter geneCounter = new GeneCounter();
+        System.out.println("Número de genes: " + geneCounter.countGenes("ATGATGATG"));
+
+        GeneticCombinations geneticCombinations = new GeneticCombinations();
+        System.out.println("Número de combinaciones: " + geneticCombinations.calculateCombinations(3));
+
+        DateManager dateManager = new DateManager();
+        dateManager.addDate(LocalDate.now());
+        System.out.println("Fechas: " + dateManager.getDates());
+
+        // DocumentOrganizer y TextSearcher requieren rutas de archivos y no se demuestran aquí
+
+        MaxFinder maxFinder = new MaxFinder();
+        System.out.println("Número máximo: " + maxFinder.findMax(new int[]{1, 2, 3}));
+
+        NumberListing numberListing = new NumberListing();
+        numberListing.listNumbers(1, 5);
+
+        NumberSummation numberSummation = new NumberSummation();
+        System.out.println("Suma de números: " + numberSummation.sumNumbers(5));
+
+        PowerCalculator powerCalculator = new PowerCalculator();
+        System.out.println("Cálculo de potencia: " + powerCalculator.calculatePower(2, 3));
+
+        QuicksortOptimizer quicksortOptimizer = new QuicksortOptimizer();
+        int[] array = {5, 3, 2, 1, 4};
+        quicksortOptimizer.quickSort(array, 0, array.length - 1);
+        System.out.print("Array ordenado: ");
+        for (int i : array) {
+            System.out.print(i + " ");
         }
     }
 }
