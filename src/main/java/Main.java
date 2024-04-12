@@ -41,8 +41,16 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Número de combinaciones: " + combinations);
             }
 
-            dateManager.addDate(LocalDate.now());
-            JOptionPane.showMessageDialog(null, "Fechas: " + dateManager.getDates());
+            String continueAddingDates;
+            do {
+                String dateStr = JOptionPane.showInputDialog(null, "Introduce una fecha en formato YYYY-MM-DD:");
+                if (dateStr != null) {
+                    LocalDate date = LocalDate.parse(dateStr);
+                    dateManager.addDate(date);
+                    JOptionPane.showMessageDialog(null, "Fecha añadida. Fechas: " + dateManager.getDates());
+                }
+                continueAddingDates = JOptionPane.showInputDialog(null, "¿Deseas agregar otra fecha? (si/no):");
+            } while ("si".equalsIgnoreCase(continueAddingDates));
 
             String filePath = JOptionPane.showInputDialog(null, "Introduce la ruta del archivo para organizar:");
             if (filePath != null) {
@@ -63,13 +71,6 @@ public class Main {
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, "Error al buscar en el documento.");
                 }
-            }
-
-            String dateStr = JOptionPane.showInputDialog(null, "Introduce una fecha en formato YYYY-MM-DD:");
-            if (dateStr != null) {
-                LocalDate date = LocalDate.parse(dateStr);
-                dateManager.addDate(date);
-                JOptionPane.showMessageDialog(null, "Fecha añadida. Fechas: " + dateManager.getDates());
             }
 
             String numbersStr = JOptionPane.showInputDialog(null, "Introduce una serie de números separados por espacios:");
