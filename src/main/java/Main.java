@@ -1,8 +1,6 @@
 import analysis.GeneCounter;
 import analysis.GeneticCombinations;
 import information.DateManager;
-import information.DocumentOrganizer;
-import information.TextSearcher;
 import numeric.MaxFinder;
 import numeric.NumberListing;
 import numeric.NumberSummation;
@@ -55,10 +53,17 @@ public class Main {
 
             String startEndStr = JOptionPane.showInputDialog(null, "Introduce el número inicial y final para listar los números, separados por un espacio:");
             if (startEndStr != null) {
-                String[] startEndArr = startEndStr.split(" ");
-                int start = Integer.parseInt(startEndArr[0]);
-                int end = Integer.parseInt(startEndArr[1]);
-                numberListing.listNumbers(start, end);
+                try {
+                    String[] startEndArr = startEndStr.split(" ");
+                    int start = Integer.parseInt(startEndArr[0]);
+                    int end = Integer.parseInt(startEndArr[1]);
+                    String numbers = numberListing.listNumbers(start, end);
+                    JOptionPane.showMessageDialog(null, "Números listados: " + numbers);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, introduce dos números separados por un espacio.");
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, introduce dos números separados por un espacio.");
+                }
             }
 
             String nStr = JOptionPane.showInputDialog(null, "Introduce un número para calcular su suma:");
