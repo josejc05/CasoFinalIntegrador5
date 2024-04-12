@@ -1,6 +1,8 @@
 import analysis.GeneCounter;
 import analysis.GeneticCombinations;
 import information.DateManager;
+import information.DocumentOrganizer;
+import information.TextSearcher;
 import numeric.MaxFinder;
 import numeric.NumberListing;
 import numeric.NumberSummation;
@@ -8,7 +10,9 @@ import numeric.PowerCalculator;
 import optimization.QuicksortOptimizer;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +20,8 @@ public class Main {
             GeneCounter geneCounter = new GeneCounter();
             GeneticCombinations geneticCombinations = new GeneticCombinations();
             DateManager dateManager = new DateManager();
+            DocumentOrganizer documentOrganizer = new DocumentOrganizer();
+            TextSearcher textSearcher = new TextSearcher();
             MaxFinder maxFinder = new MaxFinder();
             NumberListing numberListing = new NumberListing();
             NumberSummation numberSummation = new NumberSummation();
@@ -38,7 +44,33 @@ public class Main {
             dateManager.addDate(LocalDate.now());
             JOptionPane.showMessageDialog(null, "Fechas: " + dateManager.getDates());
 
-            // DocumentOrganizer y TextSearcher requieren rutas de archivos y no se demuestran aquí
+            String filePath = JOptionPane.showInputDialog(null, "Introduce la ruta del archivo para organizar:");
+            if (filePath != null) {
+                try {
+                    documentOrganizer.organizeDocument(filePath);
+                    JOptionPane.showMessageDialog(null, "Documento organizado correctamente.");
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "Error al organizar el documento.");
+                }
+            }
+
+            String filePathForSearch = JOptionPane.showInputDialog(null, "Introduce la ruta del archivo para buscar:");
+            String searchTerm = JOptionPane.showInputDialog(null, "Introduce la palabra a buscar:");
+            if (filePathForSearch != null && searchTerm != null) {
+                try {
+                    List<Integer> lineNumbers = textSearcher.searchInFile(filePathForSearch, searchTerm);
+                    JOptionPane.showMessageDialog(null, "La palabra se encontró en las líneas: " + lineNumbers);
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "Error al buscar en el documento.");
+                }
+            }
+
+            String dateStr = JOptionPane.showInputDialog(null, "Introduce una fecha en formato YYYY-MM-DD:");
+            if (dateStr != null) {
+                LocalDate date = LocalDate.parse(dateStr);
+                dateManager.addDate(date);
+                JOptionPane.showMessageDialog(null, "Fecha añadida. Fechas: " + dateManager.getDates());
+            }
 
             String numbersStr = JOptionPane.showInputDialog(null, "Introduce una serie de números separados por espacios:");
             if (numbersStr != null) {
