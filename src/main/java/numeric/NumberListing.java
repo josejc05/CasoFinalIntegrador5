@@ -2,9 +2,11 @@ package numeric;
 
 public class NumberListing {
 
-    public void listNumbers(int start, int end) {
+    public String listNumbers(int start, int end) {
+        StringBuilder numbers = new StringBuilder();
         for (int i = start; i <= end; i++) {
-            System.out.println(i);
+            numbers.append(i).append(" ");
         }
+        return numbers.toString().trim();
     }
 }
