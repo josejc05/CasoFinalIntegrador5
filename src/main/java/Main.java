@@ -49,6 +49,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button1);
 
             JButton button2 = new JButton("Calcular combinaciones genéticas");
             button2.addActionListener(new ActionListener() {
@@ -62,6 +63,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button2);
 
             JButton button3 = new JButton("Agregar fechas");
             button3.addActionListener(new ActionListener() {
@@ -79,6 +81,7 @@ public class Main {
                     } while ("si".equalsIgnoreCase(continueAddingDates));
                 }
             });
+            panel.add(button3);
 
             JButton button4 = new JButton("Organizar documento");
             button4.addActionListener(new ActionListener() {
@@ -95,6 +98,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button4);
 
             JButton button5 = new JButton("Buscar en documento");
             button5.addActionListener(new ActionListener() {
@@ -112,6 +116,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button5);
 
             JButton button6 = new JButton("Encontrar número máximo");
             button6.addActionListener(new ActionListener() {
@@ -129,6 +134,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button6);
 
             JButton button7 = new JButton("Listar números");
             button7.addActionListener(new ActionListener() {
@@ -150,6 +156,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button7);
 
             JButton button8 = new JButton("Sumar números");
             button8.addActionListener(new ActionListener() {
@@ -163,6 +170,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button8);
 
             JButton button9 = new JButton("Calcular potencia");
             button9.addActionListener(new ActionListener() {
@@ -178,6 +186,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button9);
 
             JButton button10 = new JButton("Ordenar números");
             button10.addActionListener(new ActionListener() {
@@ -199,6 +208,7 @@ public class Main {
                     }
                 }
             });
+            panel.add(button10);
 
             JButton button11 = new JButton("Búsqueda Eficiente en Textos");
             button11.addActionListener(new ActionListener() {
@@ -225,18 +235,17 @@ public class Main {
                     }
                 }
             });
-
-            panel.add(button1);
-            panel.add(button2);
-            panel.add(button3);
-            panel.add(button4);
-            panel.add(button5);
-            panel.add(button6);
-            panel.add(button7);
-            panel.add(button8);
-            panel.add(button9);
-            panel.add(button10);
             panel.add(button11);
+
+            JButton button12 = new JButton("Ver fechas guardadas");
+            button12.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    List<LocalDate> dates = dateManager.getDates();
+                    JOptionPane.showMessageDialog(null, "Fechas guardadas: " + dates);
+                }
+            });
+            panel.add(button12);
 
             frame.getContentPane().add(panel, BorderLayout.CENTER);
             frame.setVisible(true);
