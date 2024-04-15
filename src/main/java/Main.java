@@ -200,6 +200,32 @@ public class Main {
                 }
             });
 
+            JButton button11 = new JButton("Búsqueda Eficiente en Textos");
+            button11.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String filePathForSearch = JOptionPane.showInputDialog(null, "Introduce la ruta del archivo para buscar:");
+                    String searchTerm = JOptionPane.showInputDialog(null, "Introduce la palabra a buscar:");
+                    String searchType = JOptionPane.showInputDialog(null, "Introduce el tipo de búsqueda (lineal o binaria):");
+                    if (filePathForSearch != null && searchTerm != null && searchType != null) {
+                        try {
+                            List<Integer> lineNumbers;
+                            if ("lineal".equalsIgnoreCase(searchType)) {
+                                lineNumbers = textSearcher.searchInFile(filePathForSearch, searchTerm);
+                            } else if ("binaria".equalsIgnoreCase(searchType)) {
+                                lineNumbers = textSearcher.binarySearchInFile(filePathForSearch, searchTerm);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Tipo de búsqueda no reconocido. Por favor, introduce 'lineal' o 'binaria'.");
+                                return;
+                            }
+                            JOptionPane.showMessageDialog(null, "La palabra se encontró en las líneas: " + lineNumbers);
+                        } catch (IOException ex) {
+                            JOptionPane.showMessageDialog(null, "Error al buscar en el documento.");
+                        }
+                    }
+                }
+            });
+
             panel.add(button1);
             panel.add(button2);
             panel.add(button3);
@@ -210,6 +236,7 @@ public class Main {
             panel.add(button8);
             panel.add(button9);
             panel.add(button10);
+            panel.add(button11);
 
             frame.getContentPane().add(panel, BorderLayout.CENTER);
             frame.setVisible(true);
