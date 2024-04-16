@@ -40,6 +40,8 @@ public class Main {
             QuicksortOptimizer quicksortOptimizer = new QuicksortOptimizer();
 
             JButton button1 = new JButton("Contar genes");
+            button1.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button1.setForeground(Color.WHITE); // Color de texto blanco
             button1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -53,6 +55,8 @@ public class Main {
             panel.add(button1);
 
             JButton button2 = new JButton("Calcular combinaciones genéticas");
+            button2.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button2.setForeground(Color.RED); // Color de texto blanco
             button2.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -67,6 +71,8 @@ public class Main {
             panel.add(button2);
 
             JButton button3 = new JButton("Agregar fechas");
+            button3.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button3.setForeground(Color.RED); // Color de texto blanco
             button3.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -85,6 +91,8 @@ public class Main {
             panel.add(button3);
 
             JButton button4 = new JButton("Organizar documento");
+            button4.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button4.setForeground(Color.WHITE); // Color de texto blanco
             button4.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -102,6 +110,8 @@ public class Main {
             panel.add(button4);
 
             JButton button5 = new JButton("Buscar en documento");
+            button5.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button5.setForeground(Color.WHITE); // Color de texto blanco
             button5.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -120,6 +130,8 @@ public class Main {
             panel.add(button5);
 
             JButton button6 = new JButton("Encontrar número máximo");
+            button6.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button6.setForeground(Color.RED); // Color de texto blanco
             button6.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -138,6 +150,8 @@ public class Main {
             panel.add(button6);
 
             JButton button7 = new JButton("Listar números");
+            button7.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button7.setForeground(Color.RED); // Color de texto blanco
             button7.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -160,6 +174,8 @@ public class Main {
             panel.add(button7);
 
             JButton button8 = new JButton("Sumar números");
+            button8.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button8.setForeground(Color.WHITE); // Color de texto blanco
             button8.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -173,6 +189,8 @@ public class Main {
             });
             panel.add(button8);
             JButton button9 = new JButton("Calcular potencia");
+            button9.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button9.setForeground(Color.WHITE); // Color de texto blanco
             button9.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -189,6 +207,8 @@ public class Main {
             panel.add(button9);
 
             JButton button10 = new JButton("Ordenar números");
+            button10.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button10.setForeground(Color.RED); // Color de texto blanco
             button10.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -211,6 +231,8 @@ public class Main {
             panel.add(button10);
 
             JButton button11 = new JButton("Búsqueda Eficiente en Textos");
+            button11.setBackground(new Color(255, 255, 255)); // Color de fondo verde
+            button11.setForeground(Color.RED); // Color de texto blanco
             button11.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -238,6 +260,8 @@ public class Main {
             panel.add(button11);
 
             JButton button12 = new JButton("Ver fechas guardadas");
+            button12.setBackground(new Color(255, 0, 0)); // Color de fondo verde
+            button12.setForeground(Color.WHITE); // Color de texto blanco
             button12.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
