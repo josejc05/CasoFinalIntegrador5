@@ -22,10 +22,11 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Menú Principal");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(300, 200);
+            frame.setSize(600, 400); // Aumentar el tamaño de la ventana
 
             JPanel panel = new JPanel();
-            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            panel.setLayout(new GridLayout(6, 2)); // Cambiar a GridLayout
+            panel.setBackground(Color.LIGHT_GRAY); // Cambiar el color de fondo del panel
 
             GeneCounter geneCounter = new GeneCounter();
             GeneticCombinations geneticCombinations = new GeneticCombinations();
@@ -171,7 +172,6 @@ public class Main {
                 }
             });
             panel.add(button8);
-
             JButton button9 = new JButton("Calcular potencia");
             button9.addActionListener(new ActionListener() {
                 @Override
@@ -249,6 +249,6 @@ public class Main {
 
             frame.getContentPane().add(panel, BorderLayout.CENTER);
             frame.setVisible(true);
-        });
+});
     }
 }
